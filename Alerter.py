@@ -1,3 +1,11 @@
+"""
+.. module:: Alerter
+   :platform: Unix, Linux
+   :synopsis: Module for creating alerts
+
+.. moduleauthor:: Kevin Hsu <k.wk.hsu@gmail.com>
+
+"""
 import pandas
 
 from datetime import datetime
@@ -74,6 +82,8 @@ def alerter(name='', path=''):
 		
 			:param string path: location for alert's statefile
 			:param string alert: name of alert
+
+			:returns function: 
 	"""
 	if path == '':
 		path = '~/alerts/'
