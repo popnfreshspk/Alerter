@@ -59,7 +59,6 @@ def set_state(status, failure, state_file):
 		status['status'] = 'ERROR'
 		if status['count'].max() >= status['next_message'].max():
 			fibonacci_next_placeholder = status['next_message'].max()
-			print fibonacci_next_placeholder
 			send_alert = True
 			status['next_message'] = fibonacci_next_placeholder + status['last_message'].max()
 			status['last_message'] = fibonacci_next_placeholder
@@ -104,7 +103,7 @@ def alerter(name='', path=''):
 						file_location = state_file
 					)
 			else:
-				log(message=alert, status='OK')
+				log(message=name, status='OK')
 		return output_function
 	
 	return alert_decorator
