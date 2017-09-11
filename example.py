@@ -4,12 +4,12 @@ default_directory = '~/'
 
 @alerter(name='passing_alert', path=default_directory)
 def passing_alert():
-	return False
+	return (False, '')
 
 
 @alerter(name='failing_alert', path=default_directory)
 def failing_alert():
-	return True
+	return (True, 'Failing alert')
 
 
 @alerter(name='exception_alert', path=default_directory)

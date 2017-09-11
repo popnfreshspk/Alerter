@@ -4,3 +4,4 @@ notification_emails = [
 
 email_user = ''
 email_password = ''
+default_directory = '~/'

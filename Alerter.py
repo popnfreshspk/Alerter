@@ -95,16 +95,18 @@ def alerter(name='', path=''):
 			status = init_state(state_file)
 			
 			# status_function is a function that should return true/false
+			exception_status = False
 			try:
 				failure, error_message = status_function()
 			except Exception as e:
 				failure = True
+				exception_status = 'EXCEPTION'
 				error_message = e.message
-			
+				
 			send_alert = set_state(status, failure, state_file)
 			
 			if failure:
-				log(message=name + ' ' + error_message, status='ERROR')
+				log(message=name + ' ' + error_message, status=exception_status if exception_status else 'ERROR')
 				if send_alert:
 					send_email(
 						to_email = notification_emails,
