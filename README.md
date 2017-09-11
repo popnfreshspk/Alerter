@@ -1,4 +1,4 @@
-Alerter
+![alt text](http://i.imgur.com/bYspnwo.png) Alerter
 =======
 Alerter is a decorator that converts a function into an e-mail notifier about errors. This is meant to be an easy way to implement custom state based alerts.
 
@@ -16,6 +16,8 @@ email_user = 'gmailuser'
 email_password = 'gmailpassword'
 
 default_directory = 'directory where logs will be saved'
+
+slack_endpoint = 'post endpoint for slack webhook'
 ```
 
 Implementation
@@ -41,6 +43,6 @@ def exception_alert():
 	return 1/0
 ```
 
-
-
-
+Webhooks
+========
+Will work out of the box with Slack. Go to: https://api.slack.com/incoming-webhooks to configure.

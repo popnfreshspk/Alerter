@@ -4,4 +4,9 @@ notification_emails = [
 
 email_user = ''
 email_password = ''
-default_directory = '~/'
+default_directory = ''
+
+#Webhooks
+slack_endpoint = None
+hipchat_endpoint = None
+

@@ -1,6 +1,5 @@
 from Alerter import alerter
-
-default_directory = '~/'
+from Config import default_directory
 
 @alerter(name='passing_alert', path=default_directory)
 def passing_alert():

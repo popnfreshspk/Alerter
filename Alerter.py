@@ -9,12 +9,14 @@
 import pandas
 
 from datetime import datetime
+
 from Emailer import send_email
-from Config import notification_emails 
+from Webhooks import webhook_dispatcher
+from Config import notification_emails, default_directory 
 
 def log(message='', status='OK'):
 	now = str(datetime.now().replace(microsecond=0))
-	with open('status.log', 'a') as f:
+	with open(default_directory + 'status.log', 'a') as f:
 		f.write('[%s] - %s\n' % (now, status + ' ' + message))
 
 
@@ -113,6 +115,7 @@ def alerter(name='', path=''):
 						subject='[Warning] %s - %s' % (name, error_message),
 						file_location = state_file
 					)
+					webhook_dispatcher(name, error_message)
 			else:
 				log(message=name, status='OK')
 		return output_function

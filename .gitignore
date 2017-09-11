@@ -1,3 +1,5 @@
 Config.py
+*.csv
+*.log
 *.pyc
 *.swp
