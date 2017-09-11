@@ -57,7 +57,7 @@ def set_state(status, failure, state_file):
 		status['count'] += 1
 		
 		status['status'] = 'ERROR'
-		if status['count'].max() == status['next_message'].max():
+		if status['count'].max() >= status['next_message'].max():
 			fibonacci_next_placeholder = status['next_message'].max()
 			print fibonacci_next_placeholder
 			send_alert = True
