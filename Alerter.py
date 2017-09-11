@@ -4,6 +4,12 @@ from datetime import datetime
 from Emailer import send_email
 from Config import notification_emails 
 
+def log(message='', status='OK'):
+	now = str(datetime.now().replace(microsecond=0))
+	with open('status.log', 'a') as f:
+		f.write('[%s] - %s\n' % (now, status + ' ' + message))
+
+
 def init_state(filename):
 	"""
 		Helper function for using pandas DataFrame for storing alert state.
@@ -26,6 +32,7 @@ def init_state(filename):
 		)
 		state.to_csv(filename, index=None)
 		return state	  
+
 
 def set_state(status, failure, state_file):
 	"""
@@ -59,11 +66,7 @@ def set_state(status, failure, state_file):
 		status.to_csv(state_file, index=None)
 	
 	return send_alert
-	
-def log(message='', status='OK'):
-	now = str(datetime.now().replace(microsecond=0))
-	with open('status.log', 'a') as f:
-		f.write('[%s] - %s\n' % (now, status + ' ' + message))
+
 
 def alerter(path='', alert=''):
 	"""
@@ -74,6 +77,9 @@ def alerter(path='', alert=''):
 			:param string path: location for alert's statefile
 			:param string alert: name of alert
 	"""
+	if path == '':
+		path = '~/alerts/'
+	
 	def alert_decorator(status_function):
 		state_file = path + alert + '.csv'
 		error_message = ''
