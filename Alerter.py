@@ -89,6 +89,7 @@ def alerter(name='', path=''):
 			# status_function is a function that should return true/false
 			try:
 				failure = status_function()
+				error_message = ''
 			except Exception as e:
 				failure = True
 				error_message = e.message
