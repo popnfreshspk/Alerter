@@ -101,7 +101,7 @@ def alerter(name='', path=''):
 				if send_alert:
 					send_email(
 						to_email = notification_emails,
-						subject='[ERROR] %s' % alert,
+						subject='[ERROR] %s' % name,
 						file_location = state_file
 					)
 			else:
