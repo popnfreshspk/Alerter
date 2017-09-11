@@ -100,7 +100,7 @@ def alerter(path='', alert=''):
 				if send_alert:
 					send_email(
 						to_email = notification_emails,
-						subject='[ERROR] %s' % alert
+						subject='[ERROR] %s' % alert,
 						file_location = state_file
 					)
 			else:
