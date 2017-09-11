@@ -1,0 +1,6 @@
+notification_emails = [
+	'sample@sample.com'
+]
+
+email_user = ''
+email_password = ''
