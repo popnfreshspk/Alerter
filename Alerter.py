@@ -88,8 +88,7 @@ def alerter(name='', path=''):
 			
 			# status_function is a function that should return true/false
 			try:
-				failure = status_function()
-				error_message = ''
+				failure, error_message = status_function()
 			except Exception as e:
 				failure = True
 				error_message = e.message
@@ -101,7 +100,7 @@ def alerter(name='', path=''):
 				if send_alert:
 					send_email(
 						to_email = notification_emails,
-						subject='[ERROR] %s' % name,
+						subject='[Warning] %s - %s' % (name, error_message),
 						file_location = state_file
 					)
 			else:
