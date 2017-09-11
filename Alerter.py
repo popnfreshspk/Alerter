@@ -96,7 +96,7 @@ def alerter(name='', path=''):
 			send_alert = set_state(status, failure, state_file)
 			
 			if failure:
-				log(message=alert + ' ' + error_message, status='ERROR')
+				log(message=name + ' ' + error_message, status='ERROR')
 				if send_alert:
 					send_email(
 						to_email = notification_emails,
