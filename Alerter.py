@@ -22,7 +22,7 @@ def init_state(filename):
 		return pandas.read_csv(filename)
 	except:
 		state = pandas.DataFrame(
-			[['', 0, 0, 1]], 
+			[['', 2, 2, 3]], 
 			columns=[
 				'status',
 				'count',
@@ -49,13 +49,12 @@ def set_state(status, failure, state_file):
 	
 	if failure == False:
 		status['status'] = 'OK'
-		status['count'] = 0
-		status['last_message'] = 1
-		status['next_message'] = 1
+		status['count'] = 2
+		status['last_message'] = 2
+		status['next_message'] = 3
 		status.to_csv(state_file, index=None)	
 	else:
-		status['count'] += 1
-		
+		status['count'] += 1	
 		status['status'] = 'ERROR'
 		if status['count'].max() >= status['next_message'].max():
 			fibonacci_next_placeholder = status['next_message'].max()
