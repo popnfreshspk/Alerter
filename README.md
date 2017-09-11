@@ -1,4 +1,4 @@
-![alt text](http://i.imgur.com/bYspnwo.png) Alerter
+![alt text](http://i.imgur.com/ElKeePp.png) Alerter
 =======
 Alerter is a decorator that converts a function into an e-mail notifier about errors. This is meant to be an easy way to implement custom state based alerts.
 
