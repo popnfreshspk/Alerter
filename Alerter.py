@@ -68,7 +68,7 @@ def set_state(status, failure, state_file):
 	return send_alert
 
 
-def alerter(path='', alert=''):
+def alerter(name='', path=''):
 	"""
 		Decorator that wraps a boolean function with alert functionality. 
 		Alerters will send alerts based on input function's truth state and 
@@ -81,7 +81,7 @@ def alerter(path='', alert=''):
 		path = '~/alerts/'
 	
 	def alert_decorator(status_function):
-		state_file = path + alert + '.csv'
+		state_file = path + name + '.csv'
 		error_message = ''
 		def output_function():
 			status = init_state(state_file)
