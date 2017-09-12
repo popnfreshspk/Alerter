@@ -1,1 +1,1 @@
-from Alerter import alerter
+import Config

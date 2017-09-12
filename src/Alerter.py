@@ -12,7 +12,7 @@ from datetime import datetime
 
 from Emailer import send_email
 from Webhooks import webhook_dispatcher
-from Config import notification_emails, default_directory 
+from .Config import notification_emails, default_directory 
 
 def log(message='', status='OK'):
 	now = str(datetime.now().replace(microsecond=0))
@@ -87,9 +87,6 @@ def alerter(name='', path=''):
 
 			:returns function: 
 	"""
-	if path == '':
-		path = '~/alerts/'
-	
 	def alert_decorator(status_function):
 		state_file = path + name + '.csv'
 		error_message = ''

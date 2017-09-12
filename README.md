@@ -1,11 +1,18 @@
-![alt text](http://i.imgur.com/ElKeePp.png) Alerter
+![alt text](http://i.imgur.com/J5WWmGH.png) Alerter ![alt text](http://i.imgur.com/iaFq7mW.png)
 =======
 Alerter is a decorator that converts a function into an e-mail notifier about errors. This is meant to be an easy way to implement custom state based alerts.
 
 Alerter uses Fibonacci to determine the next time to send an alert, and keeps processes that enter bad states from flooding your inbox.
 
-Configuration
-=============
+![alt text](http://i.imgur.com/RU7rjf9.png)
+
+Setup
+=====
+## Getting started
+Update `Config.py.example` with your configuration parameters. Rename this file `Config.py` and move it into the `src` directory.
+
+
+## Configuration
 ```python
 Config.py
 notification_emails = [

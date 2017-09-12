@@ -1,5 +1,9 @@
-from Alerter import alerter
-from Config import default_directory
+import sys
+
+from src import alerter
+from src import Config
+
+default_directory = Config.default_directory
 
 @alerter(name='passing_alert', path=default_directory)
 def passing_alert():
