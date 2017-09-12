@@ -1,4 +1,4 @@
-![alt text](http://i.imgur.com/J5WWmGH.png) Alerter ![alt text](http://i.imgur.com/iaFq7mW.png)
+![alt text](http://i.imgur.com/ISPH5MI.png) Alerter ![alt text](http://i.imgur.com/iaFq7mW.png)
 =======
 Alerter is a decorator that converts a function into an e-mail notifier about errors. This is meant to be an easy way to implement custom state based alerts.
 
@@ -6,7 +6,7 @@ Alerter uses Fibonacci to determine the next time to send an alert, and keeps pr
 
 ![alt text](http://i.imgur.com/RU7rjf9.png)
 
-![alt text](http://i.imgur.com/J5WWmGH.png) Setup
+![alt text](http://i.imgur.com/ISPH5MI.png) Setup
 =====
 #### Getting started
 Update `Config.py.example` with your configuration parameters. Rename this file `Config.py` and move it into the `src` directory.
@@ -27,7 +27,7 @@ default_directory = 'directory where logs will be saved'
 slack_endpoint = 'post endpoint for slack webhook'
 ```
 
-![alt text](http://i.imgur.com/J5WWmGH.png) Implementation
+![alt text](http://i.imgur.com/ISPH5MI.png) Implementation
 ==============
 The function that alerter decorates must return a tuple (bool, string):
 	bool - whether or not an alert should be sent.
@@ -50,6 +50,6 @@ def exception_alert():
 	return 1/0
 ```
 
-![alt text](http://i.imgur.com/J5WWmGH.png) Webhooks
+![alt text](http://i.imgur.com/ISPH5MI.png) Webhooks
 ========
 Will work out of the box with Slack. Go to: https://api.slack.com/incoming-webhooks to configure.
