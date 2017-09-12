@@ -6,13 +6,13 @@ Alerter uses Fibonacci to determine the next time to send an alert, and keeps pr
 
 ![alt text](http://i.imgur.com/RU7rjf9.png)
 
-Setup
+![alt text](http://i.imgur.com/J5WWmGH.png) Setup
 =====
-## Getting started
+#### Getting started
 Update `Config.py.example` with your configuration parameters. Rename this file `Config.py` and move it into the `src` directory.
 
 
-## Configuration
+#### Configuration
 ```python
 Config.py
 notification_emails = [
@@ -27,7 +27,7 @@ default_directory = 'directory where logs will be saved'
 slack_endpoint = 'post endpoint for slack webhook'
 ```
 
-Implementation
+![alt text](http://i.imgur.com/J5WWmGH.png) Implementation
 ==============
 The function that alerter decorates must return a tuple (bool, string):
 	bool - whether or not an alert should be sent.
@@ -50,6 +50,6 @@ def exception_alert():
 	return 1/0
 ```
 
-Webhooks
+![alt text](http://i.imgur.com/J5WWmGH.png) Webhooks
 ========
 Will work out of the box with Slack. Go to: https://api.slack.com/incoming-webhooks to configure.
